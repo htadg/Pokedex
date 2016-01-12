@@ -8,7 +8,11 @@ tree = html.fromstring(page.content)
 
 tr_elements = tree.xpath('//tr')
 
-pok = []
+stats = ["Name", "Type", "Total", "HP", "Attack", "Defence", "Sp.Atk", "Sp.Def", "Speed"]
+head = ["000", stats]
+
+pok = [head]
+
 
 for c in range(1, len(tr_elements)):
     temp = []
@@ -24,7 +28,7 @@ for c in range(1, len(tr_elements)):
 
 # print pok
 
-for a in range(len(pok)):
+for a in range(1, len(pok)):
     # print pok[a][1][0],"------",pok[a][1][1]
     pok[a][1][0] = format_name(pok[a][1][0])
     pok[a][1][1] = format_type(pok[a][1][1])
