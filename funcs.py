@@ -22,7 +22,6 @@ def format_type(pok_type):
     end = 0
 
     for b in indices:
-        # print b
         start = end
         end = b
         nature.append(pok_type[start:end])
