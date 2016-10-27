@@ -10,7 +10,6 @@ tr_elements = tree.xpath('//tr')
 
 stats = ["Name", "Type", "Total", "HP", "Attack", "Defence", "Sp.Atk", "Sp.Def", "Speed"]
 head = ["000", stats]
-
 pok = [head]
 
 
@@ -20,16 +19,14 @@ for c in range(1, len(tr_elements)):
     for x in tr_elements[c].iterchildren():
         tt = x.text_content().lstrip(' ')
         temp.append(tt)
-    # print temp
     temp_t.append(temp[0])
     temp.pop(0)
     temp_t.append(temp)
     pok.append(temp_t)
 
-# print pok
+
 
 for a in range(1, len(pok)):
-    # print pok[a][1][0],"------",pok[a][1][1]
     pok[a][1][0] = format_name(pok[a][1][0])
     pok[a][1][1] = format_type(pok[a][1][1])
 
